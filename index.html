@@ -1,44 +1,141 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <title>psqlODBC</title>
-  </head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+ <head>
+  <title>psqlodbc - PostgreSQL ODBC driver</title>
+  <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
+ 
+  <meta name="copyright" content="The PostgreSQL Global Development Group" />
+<style type="text/css" media="screen" title="Normal Text">@import url("/media/css/base.css");
+#psqlodbcMain {
+  margin-top: 10px;
+}
+</style>
 
-  <body>
+  <link rel="shortcut icon" href="/favicon.ico" />
+<!--  <link rel="alternate stylesheet" type="text/css" media="screen" title="Large Text" href="/media/css/docs_large.css" />
 
-<table width=100% border=0 cellpadding=3 cellspacing=0>
-<tr>
-<td bgcolor="#004040" align=left height=32>
-<font size=+3 face="Arial, Lucida Sans, Helvetica" color="#FFFFFF">
-<b>psqlODBC</b>
-</font>
-</td>
-</tr>
-</table>
+  <link rel="alternate" type="application/rss+xml" title="PostgreSQL News" href="/news.rss" />
+  <link rel="alternate" type="application/rss+xml" title="PostgreSQL Events" href="/events.rss" />
+  <script type="text/javascript" src="/media/js/styleswitcher.js"></script>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1345454-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
 
-<hr>
-<h2>Introduction</h2>
+ </head>
+ <body>
+  <div id="pgContainerWrap">
+   <div id="pgContainer">
+    <span class="txtOffScreen"><a href="#pgContent" title="Skip site navigation" accesskey="1">Skip site navigation</a> (1)</span>
+    <span class="txtOffScreen"><a href="#pgContentWrap" title="Skip section navigation" accesskey="2">Skip section navigation</a> (2)</span>
+    <div id="pgHeaderContainer">
+<!--
+     <div id="pgSearch">
+      <form method="get" action="/search/">
 
-<p><b>psqlODBC</b> is the official PostgreSQL ODBC Driver.</p>
-<p>The source code for this driver was originally adopted from version 0.20 of PostODBC. The
-authors at that time were Christian Czezatke and Dan McGuirk.  Later it was maintained by Julie Ann Case.</p>
+       <div>
+        <h2 class="pgBlockHide"><label for="q">Search</label></h2>
+        <input id="q" name="q" type="text" size="20" maxlength="255" onfocus="if( this.value==this.defaultValue ) this.value='';" value="Search" accesskey="s" /><input name="a" type="hidden" value="1"/><input id="submit" name="submit" type="submit" value="Search" />
+       </div>
+      </form>
+      <h2 class="pgBlockHide">Peripheral Links</h2>
+      <div id="pgSearchNav">
+       <ul id="pgSearchNavList">
 
-<p>As part of a commercial research project,
-the developers at <a href="http://www.insightdist.com">Insight Distributions
-System</a> overhauled the driver. Their goal was to make the driver
-commercially viable. In keeping with the spirit with which
-the original source was acquired, Insight published their work at this
-location. Some time later and after some discussion with members
-of the PostgreSQL organization, psqlODBC was adapted as the part of the
-PostgreSQL source distribution. The driver continued to be maintained by 
-Byron Nikolaidis, the developer at Insight who overhauled the driver for some time.</p>
+        <li>
+          Text Size: <a href="#" onkeypress="return false;" onclick="setActiveStyleSheet('Normal Text'); return false;" title="Normal Text Size">Normal</a> / <a href="#" onkeypress="return false;" onclick="setActiveStyleSheet('Large Text'); return false;" title="Large Text Size">Large</a>
+        </li>
+        <li>
+          <a href="/about/donate">Donate</a>
+        </li>
 
-<p>The driver is currently maintained by a number of contributors to the
-PostgreSQL project. 
-It is developed and supported through the 
-<a href="http://archives.postgresql.org/pgsql-odbc/">pgsql-odbc@postgresql.org</a> mailing list.</p>
+        <li>
+          <a href="/about/contact">Contact</a>
+        </li>
+       </ul>
+      </div>
+     </div>
+-->
+	 <div id="pgHeader">
+	  <div id="pgHeaderLogoLeft">
 
-<p>psqlODBC is released under the <a href="http://www.opensource.org/licenses/lgpl-license.php">Library General Public Licence</a>, or LGPL.</p>
+	   <a href="http://www.postgresql.org/"><img alt="PostgreSQL" height="80" width="230" src="/media/img/layout/hdr_left.png" /></a>
+	  </div>
+	  <div id="pgHeaderLogoRight">
+	   <a href="/"><img width="210" height="80" alt="The world's most advanced open source database." src="/media/img/layout/hdr_right.png" /></a>
+	  </div>
+	 </div> <!-- pgHeader -->
+
+	 <div id="pgTopNav">
+	  <div id="pgTopNavLeft"><img width="7" style="height: 100%;" alt="" src="/media/img/layout/nav_lft.png" /></div>
+
+	  <div id="pgTopNavRight"><img width="7" style="height: 100%;" alt="" src="/media/img/layout/nav_rgt.png" /></div>
+	  <ul id="pgTopNavList">
+	   <li><a href="/" title="Home">psqlODBC Home</a></li>
+	   <li><a href="http://www.postgresql.org/ftp/odbc/versions/" title="Download">Download</a></li>
+	   <li><a href="http://archives.postgresql.org/pgsql-odbc/" title="Mailing list">Mailing list</a></li>
+	   <li><a href="http://git.postgresql.org/gitweb/?p=psqlodbc.git" title="Source code">Source code</a></li>
+	  </ul>
+	 </div> <!-- pgTopNav -->
+	</div> <!-- pgHeaderContainer -->
+
+	<div id="pgContent">
+<!--
+<div id="pgSideWrap">
+ <div id="pgSideNav">
+  <ul>
+   
+   
+   <li><a href="/download/">Downloads</a>
+    
+     <ul>
+     
+      <li><a href="/download/">Binary</a></li>
+     
+      <li class="last-child"><a href="/ftp/source/">Source</a></li>
+
+     
+     </ul>
+    
+    
+   
+   </li>
+   <li><a href="/download/product-categories/">Software Catalogue</a>
+    
+    
+   
+   </li>
+   <li><a href="http://pgfoundry.org/">pgFoundry</a>
+    
+    
+   
+   </li>
+   <li class="last-child"><a href="/ftp/">File Browser</a>
+
+    
+    
+   </li>
+    
+   
+  </ul>
+ </div>
+</div> --> <!-- pgSideWrap -->
+<!-- <div id="pgContentWrap"> -->
+<div id="psqlodbcMain">
+
+<h1>psqlODBC - PostgreSQL ODBC driver</h1>
+
+<p><b>psqlODBC</b> is the official PostgreSQL ODBC Driver. It is released under the <a href="http://www.opensource.org/licenses/lgpl-license.php">Library General Public Licence</a>, or LGPL.</p>
+
+<p>Downloads are available in source and binary formats at the <a href="http://www.postgresql.org/ftp/odbc/versions/">PostgreSQL downloads site</a>
 
 <hr>
 <h2>psqlODBC Documentation</h2>
@@ -84,6 +181,33 @@ collection, please send your contribution to
 </ul>
 
 <hr>
+<h2>psqlODBC Development</h2>
+
+<p>psqlODBC is developed and supported through the
+<a href="http://archives.postgresql.org/pgsql-odbc/">pgsql-odbc@postgresql.org</a> mailing list.</p>
+
+<p>You can browse the source code at the psqlODBC git repository at <a href="http://git.postgresql.org/gitweb/?p=psqlodbc.git">git.postgresql.org</a></p>
+
+<hr>
+<h2>psqlODBC History</h2>
+
+<p>The source code for this driver was originally adopted from version 0.20 of PostODBC. The
+authors at that time were Christian Czezatke and Dan McGuirk.  Later it was maintained by Julie Ann Case.</p>
+
+<p>As part of a commercial research project,
+the developers at <a href="http://www.insightdist.com">Insight Distributions
+System</a> overhauled the driver. Their goal was to make the driver
+commercially viable. In keeping with the spirit with which
+the original source was acquired, Insight published their work at this
+location. Some time later and after some discussion with members
+of the PostgreSQL organization, psqlODBC was adapted as the part of the
+PostgreSQL source distribution. The driver continued to be maintained by 
+Byron Nikolaidis, the developer at Insight who overhauled the driver for some time.</p>
+
+<p>The driver is currently maintained by a number of contributors to the
+PostgreSQL project.</p>
+
+<hr>
 <h2>Acknowledgements</h2>
 
 <h3>OpenSSL</h3>
@@ -101,6 +225,17 @@ IMPLIED. By way of example, but not limitation, M.I.T. MAKES NO REPRESENTATIONS 
 MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE LICENSED SOFTWARE OR 
 DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. </p>
 
+</div> <!-- pgContentWrap -->
 
-</body>
+     <br class="pgClearBoth" />
+    </div> <!-- pgContent -->
+	<div id="pgFooter">
+         <a class="navFooter" href="/about/privacypolicy">Privacy Policy</a> |
+         <a class="navFooter" href="/about/">About PostgreSQL</a><br/>
+
+	 Copyright &copy; 1996-2013 The PostgreSQL Global Development Group
+	</div> <!-- pgFooter -->
+   </div>
+  </div> <!-- pgContainerWrap -->
+ </body>
 </html>
