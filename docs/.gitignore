@@ -1,0 +1,3 @@
+# Everything except README.txt in this directory are copied here from master
+# psqlodbc repository.
+!README.txt
