@@ -1,5 +1,5 @@
 This is the content of the psqlodbc website, currently published at
-psqlodbc.projects.pgfoundry.org.
+https://odbc.postgresql.org/.
 
 The site consists of static pages, kept in this git repository
 (git://git.postgresql.org/git/psqlodbc-www.git). The files in the media
